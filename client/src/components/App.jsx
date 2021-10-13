@@ -2,7 +2,7 @@
 /* eslint-disable import/extensions */
 import React, { useState } from 'react';
 import { SharedContext } from './SharedContext.jsx';
-import { Header } from '../../public/styles.jsx';
+import { Wrapper, HeaderContainer, InfoContainer, Body } from '../../public/styles.jsx';
 import PageSelector from './PageSelector.jsx';
 
 const App = () => {
@@ -10,11 +10,11 @@ const App = () => {
   const [exercises, getExercises] = useState([]);
 
   return (
-    <div>
+    <Wrapper>
       <SharedContext.Provider value={{ page, setPage, exercises, getExercises }}>
-        <div>
-          <Header>
-            <h1>find my workout</h1>
+        <HeaderContainer>
+          <h1>find my workout</h1>
+          <InfoContainer>
             <span onClick={() => setPage('home')}>home</span>
             <span> | </span>
             <span onClick={() => setPage('no equipment')}>no equipment</span>
@@ -24,13 +24,13 @@ const App = () => {
             <span onClick={() => setPage('full gym')}>full gym</span>
             <span> | </span>
             <span onClick={() => setPage('cardio')}>cardio</span>
-          </Header>
-          <div>
-            <PageSelector />
-          </div>
-        </div>
+          </InfoContainer>
+        </HeaderContainer>
+        <Body>
+          <PageSelector />
+        </Body>
       </SharedContext.Provider>
-    </div>
+    </Wrapper>
   );
 };
 

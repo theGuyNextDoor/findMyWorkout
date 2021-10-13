@@ -1,18 +1,21 @@
 /* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import { SharedContext } from '../SharedContext.jsx';
+import { HomeWrapper, EquipmentContainer } from '../../../public/styles.jsx';
 
 const Home = () =>{
   const { setPage } = useContext(SharedContext);
 
   return (
-    <div>
+    <HomeWrapper>
       <h2>Home</h2>
-      <h3>no equipment</h3>
-      <h3>just bands</h3>
-      <h3>full gym</h3>
-      <h3>cardio</h3>
-    </div>
+      <EquipmentContainer>
+        <h3 onClick={() => setPage('no equipment')}>no equipment</h3>
+        <h3 onClick={() => setPage('just bands')}>just bands</h3>
+        <h3 onClick={() => setPage('full gym')}>full gym</h3>
+        <h3 onClick={() => setPage('cardio')}>cardio</h3>
+      </EquipmentContainer>
+    </HomeWrapper>
   );
 };
 
