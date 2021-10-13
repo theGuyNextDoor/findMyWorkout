@@ -14,14 +14,16 @@ const App = () => {
       <SharedContext.Provider value={{ page, setPage, exercises, getExercises }}>
         <div>
           <Header>
-            <h1>Find My Workout</h1>
+            <h1>find my workout</h1>
             <span onClick={() => setPage('home')}>home</span>
             <span> | </span>
             <span onClick={() => setPage('no equipment')}>no equipment</span>
             <span> | </span>
-            <span onClick={() => setPage('minimal equipment')}>minimal equipment</span>
+            <span onClick={() => setPage('just bands')}>just bands</span>
             <span> | </span>
             <span onClick={() => setPage('full gym')}>full gym</span>
+            <span> | </span>
+            <span onClick={() => setPage('cardio')}>cardio</span>
           </Header>
           <div>
             <PageSelector />

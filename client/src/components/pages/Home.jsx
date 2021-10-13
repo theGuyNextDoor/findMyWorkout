@@ -8,17 +8,10 @@ const Home = () =>{
   return (
     <div>
       <h2>Home</h2>
-      <select id="dropdown-basic-button" title="categoty">
-        <option value="upper-body">upper body</option>
-        <option value="lower-body">lower body</option>
-      </select>
-
-      <select id="dropdown-basic-button" title="categoty">
-        <option value="arms">arms</option>
-        <option value="chest">chest</option>
-        <option value="legs">legs</option>
-        <option value="full Body">full body</option>
-      </select>
+      <h3>no equipment</h3>
+      <h3>just bands</h3>
+      <h3>full gym</h3>
+      <h3>cardio</h3>
     </div>
   );
 };
