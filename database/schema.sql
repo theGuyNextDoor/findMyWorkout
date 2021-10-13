@@ -17,10 +17,11 @@ CREATE TABLE exercise (
   id SERIAL NOT NULL PRIMARY KEY,
   exercise_name VARCHAR(30) NOT NULL,
   exercise_description VARCHAR(50) NOT NULL,
+  body_part VARCHAR(20) NOT NULL,
+  specifics VARCHAR(20) NOT NULL,
   cosmetic INT NOT NULL,
   photo VARCHAR(100) NOT NULL,
   url VARCHAR(100) NOT NULL,
-  body_part VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE user_exercise (
