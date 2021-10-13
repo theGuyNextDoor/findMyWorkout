@@ -4,7 +4,7 @@ import { SharedContext } from './SharedContext.jsx';
 import Home from './pages/Home.jsx';
 import NoEquipment from './pages/NoEquipment.jsx';
 import MinimalEquipment from './pages/MinimalEquipment.jsx';
-import Equipment from './pages/Equipment.jsx';
+import FullGym from './pages/FullGym.jsx';
 
 const PageSelector = () => {
   const { page } = useContext(SharedContext);
@@ -14,8 +14,8 @@ const PageSelector = () => {
       return <NoEquipment />;
     case 'minimal equipment':
       return <MinimalEquipment />;
-    case 'equipment':
-      return <Equipment />;
+    case 'full gym':
+      return <FullGym />;
     default:
       return <Home />;
   }

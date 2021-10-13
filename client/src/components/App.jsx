@@ -21,7 +21,7 @@ const App = () => {
             <span> | </span>
             <span onClick={() => setPage('minimal equipment')}>minimal equipment</span>
             <span> | </span>
-            <span onClick={() => setPage('equipment')}>full gym</span>
+            <span onClick={() => setPage('full gym')}>full gym</span>
           </Header>
           <div>
             <PageSelector />

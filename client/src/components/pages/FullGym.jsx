@@ -2,6 +2,6 @@
 import React, { useContext } from 'react';
 import { SharedContext } from '../SharedContext.jsx';
 
-const Equipment = () => (<h2>Full Gym</h2>);
+const FullGym = () => (<h2>Full Gym</h2>);
 
-export default Equipment;
+export default FullGym;
