@@ -1,4 +1,5 @@
 const express = require('express');
+const controller = require('./controller');
 
 const app = express();
 const port = 3000;
@@ -6,9 +7,9 @@ app.use(express.static('client/public'));
 app.use(express.json());
 
 app.get('/*', (req, res) => {
-  res.send('Hello World!');
+  controller.runSelectTest(req, res);
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Connected on http://localhost:${port}`);
 });
