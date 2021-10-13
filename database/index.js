@@ -1,10 +1,10 @@
 /* eslint-disable import/extensions */
 const { Client } = require('pg');
-const { USER } = require('./data/config.js');
+// const { PASSWORD } = require('./data/config.js');
 
 const client = new Client({
-  user: USER,
-  database: 'find_my_workout',
+  user: 'timjordan',
+  database: 'digital_trainer',
   // password: PASSWORD,
   host: 'localhost',
   port: 5432,

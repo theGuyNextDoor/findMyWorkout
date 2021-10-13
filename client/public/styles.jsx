@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div` //change to styled header
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -33,10 +33,15 @@ export const Body = styled.div`
 export const HomeWrapper = styled.div`
   width: 100%;
 `;
-export const EquipmentContainer = styled.div`
+export const PageContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+`;
+
+/* ------------------------------ No Equipment ------------------------------ */
+export const NoEquipmentWrapper = styled.div`
+  width: 100%;
 `;
 
 export default styled;
