@@ -1,19 +1,17 @@
 /* eslint-disable camelcase */
 /* eslint-disable import/extensions */
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { SharedContext } from '../SharedContext.jsx';
 import Image from './Image.jsx';
 import { ExerciseWrapper } from '../../../public/styles.jsx';
 
 const UpperLower = ({ text, exercises }) => {
-  console.log('Here are the exercises', exercises); // DELETE
+  const { highlightExercise, setHighlightExercise } = useContext(SharedContext);
 
-  const exerciseNameArr = exercises.map((exercise) => {
-    const {exercise_name, id} = exercise;
-    return (
-      <option key={id} value={exercise_name}>{exercise_name}</option>
-    );
-  });
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    setHighlightExercise(e.target.value);
+  };
 
   const exerciseArr = exercises.map((exercise) => {
     const {
@@ -23,22 +21,37 @@ const UpperLower = ({ text, exercises }) => {
     return (
       <ExerciseWrapper key={id}>
         <span>{exercise_name}</span>
+        <Image image={photo} />
         <span>Area of focus: {cosmetic}</span>
         <span>Level of difficulty: {difficulty}</span>
         <span>{exercise_description}</span>
         <span><a href={url} rel="noreferrer" target="_blank">See how it&#39;s done</a></span>
-        <Image image={photo} />
       </ExerciseWrapper>
     );
   });
 
+  const exerciseNameArr = exercises.map((exercise, index) => {
+    const { id, exercise_name} = exercise;
+    return (
+      <option key={id} value={index}>{exercise_name}</option>
+    );
+  });
+  const isThere = () => {
+    if (highlightExercise) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <div>
       <h3>{text}</h3>
-      <select>
+      <select value={highlightExercise} onChange={handleChange}>
+        <option value="pick">Pick an exercise</option>
         {(exerciseNameArr.length) ? exerciseNameArr : <option value="none">none</option>}
       </select>
-      {exerciseArr}
+      {/* {exerciseArr} */}
+      {isThere && exerciseArr[highlightExercise]}
     </div>
   );
 };

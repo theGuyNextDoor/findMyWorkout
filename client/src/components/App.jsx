@@ -12,6 +12,7 @@ const App = () => {
   const [bands, setBands] = useState([]);
   const [full, setFull] = useState([]);
   const [cardio, setCardio] = useState([]);
+  const [highlightExercise, setHighlightExercise] = useState();
 
   useEffect(() => {
     axios.get('/none')
@@ -34,19 +35,19 @@ const App = () => {
 
   return (
     <Wrapper>
-      <SharedContext.Provider value={{ page, setPage, none, bands, full, cardio }}>
+      <SharedContext.Provider value={{ page, setPage, none, bands, full, cardio, highlightExercise, setHighlightExercise }}>
         <HeaderContainer>
           <h1>find my workout</h1>
           <InfoContainer>
-            <span onClick={() => setPage('home')}>home</span>
+            <span onClick={() => { setPage('home'); setHighlightExercise(); }}>home</span>
             <span> | </span>
-            <span onClick={() => setPage('none')}>no equipment</span>
+            <span onClick={() => { setPage('none'); setHighlightExercise(); }}>no equipment</span>
             <span> | </span>
-            <span onClick={() => setPage('bands')}>just bands</span>
+            <span onClick={() => { setPage('bands'); setHighlightExercise(); }}>just bands</span>
             <span> | </span>
-            <span onClick={() => setPage('full')}>full gym</span>
+            <span onClick={() => {setPage('full'); setHighlightExercise(); }}>full gym</span>
             <span> | </span>
-            <span onClick={() => setPage('cardio')}>cardio</span>
+            <span onClick={() => {setPage('cardio'); setHighlightExercise(); }}>cardio</span>
           </InfoContainer>
         </HeaderContainer>
         <Body>
