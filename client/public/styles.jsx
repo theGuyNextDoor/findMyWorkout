@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+/* -------------------------------- HEADERS --------------------------------- */
+export const Title = styled.h1`
+  text-transform: uppercase;
+`;
+
+/* --------------------------------- APP ------------------------------------ */
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,7 +15,7 @@ export const Wrapper = styled.div`
   padding-right: 10%;
 `;
 
-export const HeaderContainer = styled.header` //change to styled header
+export const HeaderContainer = styled.header`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,7 +38,6 @@ export const Body = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-
 `;
 /* ----------------------------------- HOME --------------------------------- */
 export const HomeWrapper = styled.div`

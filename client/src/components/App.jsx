@@ -3,7 +3,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { SharedContext } from './SharedContext.jsx';
-import { Wrapper, HeaderContainer, InfoContainer, Body } from '../../public/styles.jsx';
+import { Wrapper, HeaderContainer, InfoContainer, Body, Title } from '../../public/styles.jsx';
 import PageSelector from './PageSelector.jsx';
 
 const App = () => {
@@ -38,7 +38,7 @@ const App = () => {
     <Wrapper>
       <SharedContext.Provider value={{ page, setPage, none, bands, full, cardio, highlightUpperExercise, setHighlightUpperExercise, highlightLowerExercise, setHighlightLowerExercise}}>
         <HeaderContainer>
-          <h1>find my workout</h1>
+          <Title>virtual trainer</Title>
           <InfoContainer>
             <span onClick={() => { setPage('home'); setHighlightUpperExercise(); setHighlightLowerExercise(); }}>home</span>
             <span> | </span>
