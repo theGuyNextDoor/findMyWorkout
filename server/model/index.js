@@ -1,17 +1,15 @@
 /* eslint-disable import/extensions */
 const db = require('../../database');
-const { testQuery } = require('../../database/queries.js');
+const { selectGymExercises } = require('../../database/queries.js');
 
 module.exports = {
-  selectTest: (callback) => {
-    db.query(testQuery, (err, data) => {
+  selectGymGroup: (equipment, callback) => {
+    db.query(selectGymExercises, [equipment], (err, data) => {
       if (err) {
         callback(err);
       } else {
-        callback(null, data);
-        console.log('model');
+        callback(null, data.rows);
       }
-      db.end();
     });
   },
 };

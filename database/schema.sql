@@ -17,12 +17,12 @@ CREATE TABLE users (
 CREATE TABLE exercises (
   id SERIAL NOT NULL PRIMARY KEY,
   exercise_name VARCHAR(30) NOT NULL,
-  body_part VARCHAR(5) NOT NULL,
+  body_part VARCHAR(9) NOT NULL,
   difficulty VARCHAR(12) NOT NULL,
   equipment VARCHAR(12) NOT NULL,
   exercise_description VARCHAR(300) NOT NULL,
   cosmetic VARCHAR(20) NOT NULL,
-  photo VARCHAR(100) NOT NULL,
+  photo VARCHAR(150) NOT NULL,
   url VARCHAR(100) NOT NULL
 );
 
@@ -33,7 +33,9 @@ CREATE TABLE users_exercises (
 );
 
 CREATE INDEX idx_users_id on users(id);
-CREATE INDEX users_exercises_user_id on users_exercises(user_id);
+CREATE INDEX idx_users_exercises_user_id on users_exercises(user_id);
+CREATE INDEX idx_exercises_equipment on exercises(equipment);
+
 
 COPY exercises(id, exercise_name, body_part, difficulty, equipment, exercise_description, cosmetic, photo, url)
 FROM '/Users/timjordan/Documents/myProjects/findMyWorkout/database/data/exercise.csv'

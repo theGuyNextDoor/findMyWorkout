@@ -2,21 +2,23 @@
 import React, { useContext } from 'react';
 import { SharedContext } from '../SharedContext.jsx';
 import { HomeWrapper, PageContainer } from '../../../public/styles.jsx';
+import { noneImg, bandsImg, equipmentImg, cardioImg } from '../../../public/images.js';
+import Image from '../assets/Image.jsx';
+import SearchBar from '../assets/SearchBar.jsx';
 
-const Home = () =>{
-  const { setPage } = useContext(SharedContext);
-
-  return (
-    <HomeWrapper>
-      <h2>home</h2>
-      <PageContainer>
-        <h3 onClick={() => setPage('no equipment')}>no equipment</h3>
-        <h3 onClick={() => setPage('just bands')}>just bands</h3>
-        <h3 onClick={() => setPage('full gym')}>full gym</h3>
-        <h3 onClick={() => setPage('cardio')}>cardio</h3>
-      </PageContainer>
-    </HomeWrapper>
-  );
-};
+const Home = () => (
+  <HomeWrapper>
+    <h2>home</h2>
+    <SearchBar />
+    <PageContainer>
+      <Image text={'none'} image={noneImg} />
+      <Image text={'bands'} image={bandsImg} />
+    </PageContainer>
+    <PageContainer>
+      <Image text={'full'} image={equipmentImg} />
+      <Image text={'cardio'} image={cardioImg} />
+    </PageContainer>
+  </HomeWrapper>
+);
 
 export default Home;

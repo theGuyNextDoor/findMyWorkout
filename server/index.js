@@ -7,7 +7,9 @@ app.use(express.static('client/public'));
 app.use(express.json());
 
 app.get('/*', (req, res) => {
-  controller.runSelectTest(req, res);
+  const { url } = req;
+  const equipment = url.slice(1);
+  controller.runSelectGymGroup(equipment, req, res);
 });
 
 app.listen(port, () => {

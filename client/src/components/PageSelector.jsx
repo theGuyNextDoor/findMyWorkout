@@ -2,23 +2,20 @@
 import React, { useContext } from 'react';
 import { SharedContext } from './SharedContext.jsx';
 import Home from './pages/Home.jsx';
-import NoEquipment from './pages/NoEquipment.jsx';
-import JustBands from './pages/JustBands.jsx';
-import FullGym from './pages/FullGym.jsx';
-import Cardio from './pages/Cardio.jsx';
+import EquipmentPage from './pages/EquipmentPage.jsx';
 
 const PageSelector = () => {
-  const { page } = useContext(SharedContext);
+  const { page, none, bands, full, cardio } = useContext(SharedContext);
 
   switch (page) {
-    case 'no equipment':
-      return <NoEquipment />;
-    case 'just bands':
-      return <JustBands />;
-    case 'full gym':
-      return <FullGym />;
+    case 'none':
+      return <EquipmentPage title={'no equipment! no problem!'} gym={none} />;
+    case 'bands':
+      return <EquipmentPage title={'bands'} gym={bands} />;
+    case 'full':
+      return <EquipmentPage title={'gym equipment'} gym={full} />;
     case 'cardio':
-      return <Cardio />;
+      return <EquipmentPage title={'cardio'} gym={cardio} />;
     default:
       return <Home />;
   }

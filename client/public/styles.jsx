@@ -36,12 +36,36 @@ export const HomeWrapper = styled.div`
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: 2em;
+`;
+export const HomeImageHolder = styled.img`
+  width: 40%;
+  height: 20em;
 `;
 
-/* ------------------------------ No Equipment ------------------------------ */
-export const NoEquipmentWrapper = styled.div`
+/* ------------------------------ Equipment ------------------------------ */
+export const EquipmentWrapper = styled.div`
   width: 100%;
 `;
+
+export const EquipmentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+`;
+export const ImageHolder = styled.img`
+width: 50%;
+height: 20em;
+`;
+
+export const ExerciseWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+`;
+// const ExerciseContainer
 
 export default styled;
