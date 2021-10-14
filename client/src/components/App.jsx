@@ -12,7 +12,8 @@ const App = () => {
   const [bands, setBands] = useState([]);
   const [full, setFull] = useState([]);
   const [cardio, setCardio] = useState([]);
-  const [highlightExercise, setHighlightExercise] = useState();
+  const [highlightUpperExercise, setHighlightUpperExercise] = useState();
+  const [highlightLowerExercise, setHighlightLowerExercise] = useState();
 
   useEffect(() => {
     axios.get('/none')
@@ -35,19 +36,19 @@ const App = () => {
 
   return (
     <Wrapper>
-      <SharedContext.Provider value={{ page, setPage, none, bands, full, cardio, highlightExercise, setHighlightExercise }}>
+      <SharedContext.Provider value={{ page, setPage, none, bands, full, cardio, highlightUpperExercise, setHighlightUpperExercise, highlightLowerExercise, setHighlightLowerExercise}}>
         <HeaderContainer>
           <h1>find my workout</h1>
           <InfoContainer>
-            <span onClick={() => { setPage('home'); setHighlightExercise(); }}>home</span>
+            <span onClick={() => { setPage('home'); setHighlightUpperExercise(); setHighlightLowerExercise(); }}>home</span>
             <span> | </span>
-            <span onClick={() => { setPage('none'); setHighlightExercise(); }}>no equipment</span>
+            <span onClick={() => { setPage('none'); setHighlightUpperExercise(); setHighlightLowerExercise(); }}>no equipment</span>
             <span> | </span>
-            <span onClick={() => { setPage('bands'); setHighlightExercise(); }}>just bands</span>
+            <span onClick={() => { setPage('bands'); setHighlightUpperExercise(); setHighlightLowerExercise(); }}>just bands</span>
             <span> | </span>
-            <span onClick={() => {setPage('full'); setHighlightExercise(); }}>full gym</span>
+            <span onClick={() => {setPage('full'); setHighlightUpperExercise(); setHighlightLowerExercise(); }}>full gym</span>
             <span> | </span>
-            <span onClick={() => {setPage('cardio'); setHighlightExercise(); }}>cardio</span>
+            <span onClick={() => {setPage('cardio'); setHighlightUpperExercise(); setHighlightLowerExercise(); }}>cardio</span>
           </InfoContainer>
         </HeaderContainer>
         <Body>

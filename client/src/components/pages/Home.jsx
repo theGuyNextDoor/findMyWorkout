@@ -1,6 +1,5 @@
 /* eslint-disable import/extensions */
-import React, { useContext } from 'react';
-import { SharedContext } from '../SharedContext.jsx';
+import React from 'react';
 import { HomeWrapper, PageContainer } from '../../../public/styles.jsx';
 import { noneImg, bandsImg, equipmentImg, cardioImg } from '../../../public/images.js';
 import Image from '../assets/Image.jsx';

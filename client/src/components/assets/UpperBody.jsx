@@ -1,16 +1,15 @@
 /* eslint-disable camelcase */
 /* eslint-disable import/extensions */
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { SharedContext } from '../SharedContext.jsx';
 import Image from './Image.jsx';
 import { ExerciseWrapper } from '../../../public/styles.jsx';
 
-const UpperLower = ({ text, exercises }) => {
-  const { highlightExercise, setHighlightExercise } = useContext(SharedContext);
+const UpperBody = ({ exercises }) => {
+  const { highlightUpperExercise, setHighlightUpperExercise } = useContext(SharedContext);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
-    setHighlightExercise(e.target.value);
+    setHighlightUpperExercise(e.target.value);
   };
 
   const exerciseArr = exercises.map((exercise) => {
@@ -20,7 +19,7 @@ const UpperLower = ({ text, exercises }) => {
 
     return (
       <ExerciseWrapper key={id}>
-        <span>{exercise_name}</span>
+        <h4>{exercise_name}</h4>
         <Image image={photo} />
         <span>Area of focus: {cosmetic}</span>
         <span>Level of difficulty: {difficulty}</span>
@@ -31,13 +30,13 @@ const UpperLower = ({ text, exercises }) => {
   });
 
   const exerciseNameArr = exercises.map((exercise, index) => {
-    const { id, exercise_name} = exercise;
+    const { id, exercise_name } = exercise;
     return (
       <option key={id} value={index}>{exercise_name}</option>
     );
   });
   const isThere = () => {
-    if (highlightExercise) {
+    if (highlightUpperExercise) {
       return true;
     }
     return false;
@@ -45,15 +44,14 @@ const UpperLower = ({ text, exercises }) => {
 
   return (
     <div>
-      <h3>{text}</h3>
-      <select value={highlightExercise} onChange={handleChange}>
+      <h3>upper body</h3>
+      <select value={highlightUpperExercise} onChange={handleChange}>
         <option value="pick">Pick an exercise</option>
         {(exerciseNameArr.length) ? exerciseNameArr : <option value="none">none</option>}
       </select>
-      {/* {exerciseArr} */}
-      {isThere && exerciseArr[highlightExercise]}
+      {isThere && exerciseArr[highlightUpperExercise]}
     </div>
   );
 };
 
-export default UpperLower;
+export default UpperBody;

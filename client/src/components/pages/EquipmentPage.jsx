@@ -1,8 +1,8 @@
 /* eslint-disable import/extensions */
-import React, { useContext } from 'react';
-import { SharedContext } from '../SharedContext.jsx';
-import { EquipmentWrapper, EquipmentContainer } from '../../../public/styles.jsx';
-import UpperLower from '../assets/UpperLower.jsx';
+import React from 'react';
+import { EquipmentWrapper, EquipmentContainer, Block } from '../../../public/styles.jsx';
+import UpperBody from '../assets/UpperBody.jsx';
+import LowerBody from '../assets/LowerBody.jsx';
 
 const NoEquipment = ({ title, gym }) => {
   const upper = [];
@@ -20,8 +20,12 @@ const NoEquipment = ({ title, gym }) => {
     <EquipmentWrapper>
       <h2>{title}</h2>
       <EquipmentContainer>
-        <UpperLower text={'upper'} exercises={upper} />
-        <UpperLower text={'lower'} exercises={lower} />
+        <Block>
+          <UpperBody exercises={upper} />
+        </Block>
+        <Block>
+          <LowerBody exercises={lower} />
+        </Block>
       </EquipmentContainer>
     </EquipmentWrapper>
   );
